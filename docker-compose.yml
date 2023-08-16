@@ -14,12 +14,16 @@ services:
     container_name: mongo
     networks:
       - ncard1
-    ports:
-      - "27017:27017"
     volumes:
       - ncard-mongodb:/data/db
-      - ./ncard1/users.bson:/ncard1/users.bson
-
+      - ./ncard1/users.bson:/data/db/ncard1/users.bson
+    command: >
+      bash -c "
+        mongod --bind_ip_all &
+        sleep 10 &&
+        mongorestore --db ncard1 /data/db/ncard1 &&
+        tail -f /dev/null"
+        
 networks:
   ncard1:
 
