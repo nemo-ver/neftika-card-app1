@@ -1,0 +1,11 @@
+DATABASE_URI = "mongo"
+DATABASE_PORT = 27017
+DATABASE_NAME = "ncard1"
+SECRET_KEY = "Ramambaharamamburu"
+DEBUG_MODE = True
+HOST = "0.0.0.0"
+PORT = 5000
+API_USERNAME = 'API1'
+API_PASSWORD = 'U71(K}'
+TOKEN_URL = 'https://log.neftika-card.ru:48000/token'
+REPORT_URL = 'https://log.neftika-card.ru:48000/api/TransactionReport'
