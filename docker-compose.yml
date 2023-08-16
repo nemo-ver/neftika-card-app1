@@ -1,0 +1,27 @@
+version: 3
+services:
+  app:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    networks:
+      - ncard1
+
+  mongo:
+    image: mongo
+    container_name: mongo
+    networks:
+      - ncard1
+    ports:
+      - "27017:27017"
+    volumes:
+      - ncard-mongodb:/data/db
+      - ./ncard1.bson:/ncard1.bson
+
+networks:
+  ncard1:
+
+volumes:
+  ncard-mongodb
