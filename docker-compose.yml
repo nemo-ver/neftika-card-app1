@@ -1,4 +1,4 @@
-version: 3
+version: '3'
 services:
   app:
     build:
@@ -18,10 +18,10 @@ services:
       - "27017:27017"
     volumes:
       - ncard-mongodb:/data/db
-      - ./ncard1.bson:/ncard1.bson
+      - ./ncard1/users.bson:/ncard1/users.bson
 
 networks:
   ncard1:
 
 volumes:
-  ncard-mongodb
+  ncard-mongodb:
